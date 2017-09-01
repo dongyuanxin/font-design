@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meata charset="utf-8"/>
+        <title>两列布局</title>
+        <style type="text/css">
+        /* 实现三列布局。左右两边固定宽度，中间自适应。 */
+        *{
+            padding:0px;
+            margin: 0px;
+        }
+        .left{
+            width:200px;
+            position: absolute;
+            top:0px;left:0px; /* 采用布局的方法 */
+            background: red;
+            height: 500px;
+        }
+
+        .middle{
+            height: 500px;
+            background-color: #999;
+            margin:0 300px 0 200px;
+        }
+
+        .right{
+            width: 300px;
+            position: absolute;
+            top:0px;right:0px;
+            background: yellow;
+            height: 500px;
+        }
+        </style>
+    </head>
+    <body>
+        
+            <div class="left"></div>
+            <div class="middle">
+                    如何用CSS进行网页布局 更新完毕已学100% 用时 6小时20分 学习至5-1 混合布局
+            </div>
+            <div class="right"></div>
+    
+    </body>
+</html>
