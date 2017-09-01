@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+/* 初级制作者 */
+
+.demo01{
+    position: relative;
+    width:600px;
+    /* 高度不能写，因为微博内容高度不定 */
+}
+.demo01 .left{
+    text-align: center;
+    width:100px;
+    float :left;
+}
+.demo01 .right{
+    width:458px; /*注意计算宽度*/
+    float: right;
+    background: #9CF;
+    padding:0 20px 20px;
+    border: 1px solid #ccc;
+}
+
+.demo01 .right p{
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.demo01 span{
+    position: absolute;
+    right:15px;
+    top:5px;
+    font-size: 12px;
+}
+
+
+/* 中级制作者 */
+
+.demo02{
+    clear:both;
+    /* overflow:hidden;*/ /* 用overflow也可以 */
+    position: relative;
+    width:600px;
+    
+}
+/* 取消了leftClass布局
+.demo02 .left{
+    text-align: center;
+    width:100px;
+    float :left;
+}*/
+.demo02 img{
+    float: left;
+    margin-left:20px;
+}
+
+.demo02 .right{
+    width:458px; 
+    float: right;
+    background: #9CF;
+    padding:0 20px 20px;
+    border: 1px solid #ccc;
+}
+
+.demo02 .right p{
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.demo02 span{
+    position: absolute;
+    right:15px;
+    top:5px;
+    font-size: 12px;
+}
+
+/* 高级制作者 */
+
+.demo03 {
+    clear: both;
+    width: 458px;
+    padding:20px;
+    background: #9CF;
+    border: 1px solid #ccc;
+    margin-left: 100px; /* 先整体右移 */
+    position: relative;
+}
+
+.demo03 img{
+    float: left;
+    margin:-20px 0 0 -100px; /* 再左移 */
+}
+
+.demo03 p{
+    font-size:12px;
+    line-height: 25px;
+}
+.demo03 span{
+    position: absolute;
+    right: 20px;
+    top:10px;
+    font-size: 12px;
+}
