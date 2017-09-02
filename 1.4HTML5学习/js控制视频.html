@@ -1,0 +1,49 @@
+<html>
+        <head>
+            <title>HTML5学习</title>
+            <meta charset="utf-8"/>
+            <style type="text/css">
+            *{
+                text-align: center;
+            }
+            </style>
+        </head>
+        <body>
+            <div>
+                <button onclick="playPause()">暂停/播放</button>
+                <button onclick="makeBig()">超大屏幕</button>
+                <button onclick="makeNormal()">正常屏幕</button>
+                <button onclick="makeSmall()">小窗口播放</button>
+            </div>
+            <!-- 取消controls属性，原始控制标签太难看了 -->
+            <video id="myvideo" width="200px">
+                    <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/ogg">
+                    <source src="http://www.w3school.com.cn/i/movie.mp4" type="video/mp4">
+            </video>
+            <script type="text/javascript">
+                var myvideo = document.getElementById("myvideo");
+                function playPause(){
+                    /* 用法如下，更多的属性、方法和事件查看w3school */
+                    if(myvideo.paused)
+                        myvideo.play();
+                    else 
+                        myvideo.pause();
+                }
+                // 大坑：改变之前，在html中不能对宽度和高度同时进行限制
+                // 否则就会无法改变
+                function makeBig(){
+                    myvideo.width=2*myvideo.videoWidth; 
+                    // 大坑：不能用"120px"这样的值
+                    // 坑：videoWidth不能设定。。。是根据video默认的
+                }
+                function makeNormal(){
+                    myvideo.width=myvideo.videoWidth;
+                }
+                function makeSmall(){
+                    myvideo.width=0.5*myvideo.videoWidth;
+                }
+
+            </script>
+        </body>
+    </html>
+    
