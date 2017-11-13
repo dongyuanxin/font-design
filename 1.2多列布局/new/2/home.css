@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.main{
+    margin:0 auto;
+    width: 80%;
+}
+
+.left{
+    height:80%;
+    width:20%;
+    float: left;
+    background: blue;
+}
+
+.right{
+    height:80%;
+    width:80%;
+    float: right;
+    background: red;
+}

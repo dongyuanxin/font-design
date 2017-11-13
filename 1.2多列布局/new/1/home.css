@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.top{
+    /* 因为没有内容，所以高度要指明，否则为0 */
+    height: 100px;
+    /* width:100%; 
+    不显式指明width，那么默认是父元素100%
+    */
+    background: blue;
+}
+
+.main{
+    margin:0 auto;
+    width:80%;
+    height:300px;
+    background: #cccccc;
+}
+
+.footer{
+    width: 80%;
+    height: 100px;
+    background: #990000;
+    margin:0 auto;
+}

@@ -1,0 +1,67 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+ul {
+    /* overflow: hidden; */
+    margin:20px;
+    list-style: none; 
+    text-align: center;
+}
+    ul#demo02 {
+        overflow: visible;
+        /* 如果注释掉，可以有移动导航栏文字的效果 */
+    }
+
+ul#demo01 li a,ul#demo02 li a{
+    margin:0 1px; 
+    width:30px;
+    float: left;
+    display: block;
+    text-decoration: none;
+    /* 垂直居中 */
+    height: 30px;
+    line-height: 30px;
+    background: #ccc;
+}
+    ul#demo02 li a {
+        /*  对高度变化增加延迟效果 */
+        transition: height 0.5s,line-height 0.5s,margin-top 0.5s;
+    }
+
+ul#demo01 li a:hover{
+    width:40px;
+    background: #ff6600;
+    color:#fff;
+}
+
+ul#demo02 li a:hover{
+    background: #ff6600;
+    color:#fff;
+    height: 40px;
+    line-height: 40px;
+    margin-top:-10px;
+    /* 
+    请在Chrome中调试
+    用于控制高度变化方向
+    */
+}
+
+/* .clear{
+    clear: both;
+    height: 0;
+    overflow: hidden;
+} */
+
+/*
+通用清除浮动的方法
+*/
+ul:after{
+    content: ".";
+    height: 0;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}

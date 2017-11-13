@@ -6,7 +6,7 @@
 /* 初级制作者 */
 
 .demo01{
-    position: relative;
+    /*position: relative;*/
     width:600px;
     /* 高度不能写，因为微博内容高度不定 */
 }

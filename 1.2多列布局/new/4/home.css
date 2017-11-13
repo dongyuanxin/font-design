@@ -1,0 +1,35 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+
+.header{
+    height: 15%;
+    background: grey;
+}
+
+.main{
+    height:80%;
+    width:70%;
+    margin:0 auto;
+}
+    .main .left{
+        float:left;
+        height: 100%;
+        width:20%;
+        background: red;
+    }
+    .main .right{
+        float:left;
+        width:80%;
+        height: 80%;
+        background: yellow;
+        margin: 10% 0;
+    }
+
+.footer{
+    height: 5%;
+    background: black;
+    width:80%;
+    margin:0 auto;
+}

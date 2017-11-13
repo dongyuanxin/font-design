@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.left,.middle,.right{
+    height: 80%;
+}
+
+.left{
+    /* 
+    脱离文档流，并且释放原来占用的空间
+    所以，left和right其实是覆盖了middle左边和右边各200px宽度
+    */
+    position: absolute;
+    top:0;
+    left:0;
+    width:200px;
+    background: yellow;
+    /* 可以去掉注释来看看效果 */
+    /* z-index:-100; */
+}
+
+.middle{
+    /* 宽度自适应 */
+    margin:0 auto;
+    background: blue;
+}
+
+.right{
+    position: absolute;
+    top:0;
+    right:0;
+    width:300px;
+    background: yellow;
+}

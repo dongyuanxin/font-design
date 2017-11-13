@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* 初级制作者思路 */
+.demo01{
+    position: relative; 
+    /*
+    为了之后的span标签的absolute属性
+    absolute的父元素的position不能设置成static(默认值)
+    否则，会以文档位置来定位。
+
+    绝对定位（Absolute positioning）元素定位的参照物是其包含块，
+    既相对于其包含块进行定位，不一定是其父元素。
+    */
+    width:600px;
+}
+
+.demo01 .left{
+    width:100px;
+    float: left;
+    text-align: center;
+}
+
+.demo01 .right{
+    background: #99ccff;
+    float: right;
+    padding: 10px 20px 20px;
+    border: 1px solid #ccc;
+    width:458px;
+    line-height: 2em;
+}
+.demo01 span{
+    position: absolute;
+    top:10px;
+    right:0;
+}
+
+/* 中级制作者 */
+
+.demo02 {
+    clear: both;
+    position: relative;
+    width:600px;
+}
+
+.demo02 img{
+    float: left;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+
+.demo02 .right{
+    background: #99ccff;
+    float: right;
+    padding: 10px 20px 20px;
+    border: 1px solid #ccc;
+    width:458px;
+    line-height: 2em;
+}
+.demo02 span{
+    position: absolute;
+    top:10px;
+    right:0;
+}
+
+
+ /* 高级制作者 */
+ .demo03 {
+    position: relative;
+    clear: both;
+    background: #99ccff;
+    width:458px;
+    padding:20px;
+    border:1px solid #ccc;
+    margin-left:100px;
+    /* 不需要浮动，利用margin右移动100px */
+ }
+ .demo03 img{
+    float: left;
+    margin:-20px 0 0 -110px; 
+    /* 利用margin将margin向上和左移动 */
+ }
+
+ .demo03 span{
+    position: absolute;
+    top:10px;
+    right:0;
+ }
+
