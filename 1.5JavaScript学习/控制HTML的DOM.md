@@ -110,54 +110,29 @@
   <title> new document </title>  
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>   
   <script type="text/javascript"> 
-	// 加载函数
-    window.onload = function(){
-          var tr=document.getElementsByTagName("tr");
-          for(var i= 0;i<tr.length;i++)
-          {
-              bgcChange(tr[i]);
-          }
-     // 鼠标移动改变背景,可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。
-      }         
-	 function bgcChange(obj)
-     {
-		// 可以理解为node.attrName。毕竟obj是this传进来的
-        obj.onmouseover=function(){
-            obj.style.backgroundColor="#f2f2f2";
-        }
-        obj.onmouseout=function(){
-            obj.style.backgroundColor="#fff";
-        }
-	 }
-   
 	 // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；
-     var num=2;
+     var num = document.getElementsByTagName("tr").length;
+
      function add(){
         num++;
-        var tr=document.createElement("tr");
-        var xh=document.createElement("td");
-        var xm=document.createElement("td");
-        xh.innerHTML="xh00"+num;
-        xm.innerHTML="第"+num+"学生";
-        var del=document.createElement("td");
-        del.innerHTML="<a href='javascript:;' onclick='del(this)' >删除</a>";
-        var tab=document.getElementById("table");
-        tab.appendChild(tr);
-        tr.appendChild(xh);
-        tr.appendChild(xm);
-        tr.appendChild(del);
-        var tr = document.getElementsByTagName("tr");
-          for(var i= 0;i<tr.length;i++)
-          {
-              bgcChange(tr[i]);
-          }
+        let tr = document.createElement("tr");
+        let td_id = document.createElement("td");
+        let td_name =  document.createElement("td");
+        var td_del = document.createElement("td");
+        td_id.innerHTML = "xh00"+num;
+        td_name.innerHTML = "第"+num+"名学生";
+        td_del.innerHTML = "<a href='javascript:;' onclick='del(this)' >删除</a>";
+        let table = document.getElementById("table");
+        tr.appendChild(td_id);
+        tr.appendChild(td_name);
+        tr.appendChild(td_del);
+        table.appendChild(tr);
      }
 			
-   	 
      // 创建删除函数
      function del(obj)
      {
-         var tr=obj.parentNode.parentNode;
+         let tr = obj.parentNode.parentNode;
          tr.parentNode.removeChild(tr);
      }
   </script> 
@@ -197,9 +172,8 @@
     <head>
         <meta charset="utf-8"/>
         <title>练习题</title>
-        <link rel="stylesheet" href="css.css"/>
-        <script type="text/javascript" src="js.js"></script>
-
+        <link rel="stylesheet" href="demo.css"/>
+        <script type="text/javascript" src="demo.js"></script>
     </head>
     <body>
         <div id="test">
@@ -208,24 +182,24 @@
                 <li>家居</li>
                 <li>二手房</li>
             </ul>
-            <div >
+            <p class="on">
                 275万购昌平邻铁三居 总价20万买一居<br>
                 200万内购五环三居 140万安家东三环<br>
                 北京首现零首付楼盘 53万购东5环50平<br>
                 京楼盘直降5000 中信府 公园楼王现房<br>
-            </div>
-            <div class="hide">
+            </p>
+            <p class="hide">
                 40平出租屋大改造 美少女的混搭小窝<br>
                 经典清新简欧爱家 90平老房焕发新生<br>
                 新中式的酷色温情 66平撞色活泼家居<br>
                 瓷砖就像选好老婆 卫生间烟道的设计<br>
-            </div>
-            <div class="hide">
+            </p>
+            <p class="hide">
                     通州豪华3居260万 二环稀缺2居250w甩<br>
                     西3环通透2居290万 130万2居限量抢购<br>
                     黄城根小学学区仅260万 121平70万抛!<br>
                     独家别墅280万 苏州桥2居优惠价248万<br>
-            </div>
+            </p>
         </div>
     </body>
 </html>
@@ -233,64 +207,63 @@
 
 **CSS代码**
 ```CSS
-*{
+* {
     padding:0;
-    margin: 0;
-    font-size:15px;
-    font-family:微软雅黑;
+    margin:0;
+}
+
+#test{
+    background: #0DA07D;
+    width:20%;
+    margin:0 auto;
 }
 
 .hide{
-    display: none;
-}
-#test{
-    background: #EAE3E3;
-    width:280px;
-    height:150px;
-    /*padding:5px;*/
-    margin:15px;
-}
-#test ul {
-    overflow: hidden;
-    line-height: 20px;
-    list-style: none;
-}
-#test ul li{
-    font-size: 20px;
-    cursor: pointer;
-    float: left;;
-    text-align: center;
-    display: block;
-    width:70px;
-    padding:3px;
+    display: none; 
+    /* 隐藏，且不占据原来的位置 */
 }
 
-#test ul li.on{
-    background: #D1DC77;
+.on{
+    background:#35DF2B;
 }
-#test div{
-    border-top:3px solid #D1DC77;
-    line-height: 2em;
-    clear: both;
+
+ul {
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
 }
+
+li {
+    float: left;
+    display: block;
+    width:33.3333333333%;
+    font-weight: bolder;
+}
+
+    li:hover{
+        cursor: pointer;
+    }
+
 ```
 
 **JS脚本代码**
 ```JavaScript
-window.onload = function(){
-    var test = document.getElementById("test");
-    var li = test.getElementsByTagName("li");
-    var div = test.getElementsByTagName("div");
-    for(var i=0;i<li.length;++i){
-        li[i].index = i;
-        li[i].onmouseover = function(){
-            for(var n=0;n<li.length;++n){
-                li[n].className = "";
-                div[n].className="hide";
+function changePage(){
+    let test = document.getElementById("test");
+    let li_arr = document.getElementsByTagName("li");
+    let p_arr = document.getElementsByTagName("p");
+    for(let i = 0;i<li_arr.length;++i){
+        li_arr[i].index = i;
+        li_arr[i].onmouseover = function(){
+            for(let n=0;n<li_arr.length;++n){
+                li_arr[n].className = "";
+                p_arr[n].className ="hide";
             }
             this.className = "on";
-            div[this.index].className = "";
+            p_arr[this.index].className = "on";
         }
-    }
+    } 
 }
+
+window.onload = changePage;
 ```

@@ -5,6 +5,15 @@
 ![](Window对象/1.jpg)
 
 ### 一、JavaScript计时器
+
+HTML代码：
+```html
+<body>
+    北京时间：<input type="text" id="clock" readonly>
+</body>
+```
+
+
 - 计时器类型：
     1. 一次性计时器：仅在指定的延迟时间之后触发一次。
     2. 间隔性触发计时器：每隔一定的时间间隔就触发一次。
