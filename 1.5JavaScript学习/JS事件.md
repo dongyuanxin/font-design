@@ -1,44 +1,62 @@
-### 实例：计算器
+### 实例：计时器和计算器
 ```html
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
- <head>
-  <title> 事件</title>  
-  <script type="text/javascript">
-   function count(){     
-    var oTxt1 = document.getElementById("txt1").value;
-    var oTxt2 = document.getElementById("txt2").value;
-    var oSlt = document.getElementById("select").value;
-    var result = "";
-    switch(oSlt) {
-        case "+":
-            result = parseFloat(oTxt1) + parseFloat(oTxt2);
-            break;
-        case "-":
-            result = parseFloat(oTxt1) - parseFloat(oTxt2);
-            break;
-        case "*":
-            result = parseFloat(oTxt1) * parseFloat(oTxt2);
-            break;
-        default:
-            result = parseFloat(oTxt1) / parseFloat(oTxt2);
-    }
-    document.getElementById("fruit").value = result;
-   }   
-  </script> 
- </head> 
- <body>
-   <input type='text' id='txt1' /> 
-   <select id='select'>
-		<option value='+'>+</option>
-		<option value="-">-</option>
-		<option value="*">*</option>
-		<option value="/">/</option>
-   </select>
-   <input type='text' id='txt2' /> 
-   <input type='button' value=' = ' onclick="count()"/> <!--通过 = 按钮来调用创建的函数，得到结果--> 
-   <input type='text' id='fruit' />   
- </body>
+    <head>
+        <meta charset="utf-8"/>
+        <title>计时器</title>
+        <script type="text/javascript">
+            // 计算器函数：count
+            function count(){
+                var value1 = document.getElementById("value1").value;
+                var value2 = document.getElementById("value2").value;
+                var op = document.getElementById("select").value;
+                var result = "";
+                switch (op){
+                    case "+":
+                    result = parseFloat(value1)+parseFloat(value2);
+                    break;
+                    case "-":
+                    result = parseFloat(value1)-parseFloat(value2);
+                    break;
+                    case "*":
+                    result = parseFloat(value1)+parseFloat(value2);
+                    break;
+                    default:
+                    result = parseFloat(value1)/parseFloat(value2);
+                }
+                document.getElementById("result").value = result;
+            }
+            // 计时器函数：clock
+            function clock() {
+                let attime;
+                let time = new Date();
+                attime = time.getHours()+" : "+time.getMinutes()+" : "+time.getSeconds();
+                document.getElementById("clock").value = attime;
+            }
+            
+            window.onload = function(){
+                setInterval(clock,1000);
+            }
+
+        </script>
+    </head>
+    <body>
+        北京时间：<input type="text" id="clock" readonly>
+        <br/>
+        计算器：
+        <input type="text" id="value1">
+        <select id="select">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select>
+        <input type="text"  id="value2">
+        <input type="button" value=" = " 
+        onclick="count()"/>
+        <input type="text" id="result"/>
+    </body>
 </html>
 ```
 
