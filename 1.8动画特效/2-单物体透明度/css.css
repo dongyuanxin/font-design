@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    background: red;
+    filter:alpha(opacity =30); /* IE */
+    opacity: 0.3; /* Other */
+}

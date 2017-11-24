@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <link rel="stylesheet" href="css.css">
+        <script type="text/javascript" src="move.js" ></script>
+        <title>链式运动</title>
+    </head>
+    <body>
+        <ul>
+            <li id="li1"></li>
+        </ul>
+        <script>
+            let li = document.getElementById("li1");
+            li.onmouseover = function(){
+                startMove(li,"width",400,function(){
+                    startMove(li,"height",400,function(){
+                        startMove(li,"opacity",100);
+                    });
+                    // startMove(this,"height",400,null); 
+                    // 注意这是错误的，慎用多重函数中的this。
+                    // 现在this指向 startMove，而不是 li
+                });
+            }
+            li.onmouseout = function(){
+                startMove(li,"opacity",30,function(){
+                    startMove(li,"height",200,function(){
+                        startMove(li,"width",200,null);
+                    })
+                });
+            }
+        </script>
+    </body>
+</html>

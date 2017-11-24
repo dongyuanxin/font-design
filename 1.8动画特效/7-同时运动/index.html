@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <link rel="stylesheet" href="css.css">
+        <script type="text/javascript" src="move.js" ></script>
+        <title>同时运动</title>
+    </head>
+    <body>
+        <ul>
+            <li id="li1"></li>
+        </ul>
+        <script>
+            let li = document.getElementById("li1");
+            // 不可以：因为startMove第一句就是清空clearInterval
+            // 所以，只会变化高度，而不是同时
+            // li.onmouseover = function(){
+            //     startMove(li,"width",400);
+            //     startMove(li,"height",400);
+            // }
+            let json = {"key":"value"};
+            for(let key in json){
+                console.log(key +" : "+json[key]);
+            }
+            li.onmouseover = function(){
+                startMove(li,{"height":201,"width":400},null);
+            }
+        </script>
+    </body>
+</html>
