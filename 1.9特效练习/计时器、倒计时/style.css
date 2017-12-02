@@ -1,0 +1,15 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+div {
+    height:50px;
+    line-height: 50px;  
+    margin: 0 auto;
+    text-align: center;
+    background: black;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size:25px;
+}
